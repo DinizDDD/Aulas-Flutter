@@ -1,49 +1,78 @@
+// main.dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const PrimeiraTela());
+  runApp(const MainApp());
 }
 
-class PrimeiraTela extends StatelessWidget {
-  const PrimeiraTela({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Meu título",
+      title: "Atividade 1",
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("ZapZap", style: TextStyle(color: Colors.white)),
-          actions: <Widget>[
+          backgroundColor: Colors.indigo,
+          leading: IconButton(
+            color: Colors.white,
+            icon: Icon(Icons.menu),
+            onPressed: () => {},
+          ),
+          title: Text("Page Title", style: TextStyle(color: Colors.white)),
+          actions: [
             IconButton(
-              onPressed: () {
-                print("Botão pressionado");
-              },
-              icon: Icon(Icons.add_home_work),
+              color: Colors.white,
+              onPressed: () => {},
+              icon: Icon(Icons.favorite),
+            ),
+            IconButton(
+              color: Colors.white,
+              onPressed: () => {},
+              icon: Icon(Icons.search),
+            ),
+            IconButton(
+              color: Colors.white,
+              onPressed: () => {},
+              icon: Icon(Icons.more_vert),
             ),
           ],
-          backgroundColor: Colors.green,
         ),
         body: Center(
-          child: Column(
-            children: [
-              Container(
-                height: 200,
-                width: 300,
-                color: Colors.green,
-                padding: EdgeInsets.all(10),
-                child: Center(
-                  child: Text(
-                    "NÃO QUERO LUX SUPORTE MEU TIME",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Container(
+                  height: 200,
+                  width: 300,
+                  child: Center(
+                    child: Text("DS - 2025", style: TextStyle(fontSize: 20)),
                   ),
                 ),
-              ),
-              SizedBox(height: 100),
-              Container(height: 200, width: 300, color: Colors.green),
-            ],
+                Container(child: Image.asset('assets/images/davi.jpg')),
+              ],
+            ),
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.indigo,
+          selectedItemColor: Colors.white,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Início"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "Pesquisa",
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Pessoa"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: "Configurações",
+            ),
+          ],
         ),
       ),
     );
