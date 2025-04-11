@@ -45,14 +45,16 @@ class MainApp extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                Container(
+                SizedBox(
                   height: 200,
                   width: 300,
                   child: Center(
                     child: Text("DS - 2025", style: TextStyle(fontSize: 20)),
                   ),
                 ),
-                Container(child: Image.asset('assets/images/davi.jpg')),
+                Image.network(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvBRp3rDa9EMleXo2x1uRINZQdAYv-IfQBdA&s, width: 50.0,',
+                ),
               ],
             ),
           ),
