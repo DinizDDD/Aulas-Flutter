@@ -48,6 +48,12 @@ class BoloHomePage extends StatelessWidget {
                 style: TextStyle(fontSize: 16, color: Colors.black),
               ),
             ),
+            const SizedBox(height: 20),
+             Image.network(
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFg2hGVh5ZU7xk24xKQ2uZb1oWngA46tiIA&s",
+              ),
+          ],
+            ),
             const SizedBox(height: 30),
             Container(
               width: double.infinity,
