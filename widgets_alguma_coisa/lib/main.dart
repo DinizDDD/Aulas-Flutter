@@ -102,7 +102,7 @@ class HomeColunas extends StatelessWidget {
           ),
           Image.network(
             width: 400,
-            "https://cdn.atarde.com.br/img/Artigo-Destaque/1310000/1200x675/Davi-Brito-reflete-sobre-fama-e-perda-de-seguidore0131060700202503140933-9.webp?fallback=https%3A%2F%2Fcdn.atarde.com.br%2Fimg%2FArtigo-Destaque%2F1310000%2FDavi-Brito-reflete-sobre-fama-e-perda-de-seguidore0131060700202503140933.jpg%3Fxid%3D6624270&xid=6624270",
+            "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gragas_0.jpg",
           ),
         ],
       ),
