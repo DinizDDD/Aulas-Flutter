@@ -49,64 +49,62 @@ class BoloHomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-             Image.network(
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFg2hGVh5ZU7xk24xKQ2uZb1oWngA46tiIA&s",
-              ),
-          ],
-            ),
-            const SizedBox(height: 30),
-            Container(
-              width: double.infinity,
-              color: const Color.fromARGB(255, 211, 211, 211),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.star),
-                      Icon(Icons.star),
-                      Icon(Icons.star),
-                      Icon(Icons.star),
-                      Icon(Icons.star),
-                    ],
-                  ),
-                  Text("Muito bom"),
-                  const SizedBox(height: 20),
-                ],
-              ),
-            ),
-            const SizedBox(height: 30),
-            Container(
-              width: double.infinity,
-              color: const Color.fromARGB(255, 211, 211, 211),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    children: [
-                      Icon(Icons.kitchen),
-                      Row(children: [Text("Prep")]),
-                      Row(children: [Text("25m")]),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Icon(Icons.kitchen),
-                      Row(children: [Text("Prep")]),
-                      Row(children: [Text("25m")]),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Icon(Icons.kitchen),
-                      Row(children: [Text("Prep")]),
-                      Row(children: [Text("25m")]),
-                    ],
-                  ),
-                ],
-              ),
+            Image.network(
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFg2hGVh5ZU7xk24xKQ2uZb1oWngA46tiIA&s",
             ),
           ],
+        ),
+        const SizedBox(height: 30),
+        Container(
+          width: double.infinity,
+          color: const Color.fromARGB(255, 211, 211, 211),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.star),
+                  Icon(Icons.star),
+                  Icon(Icons.star),
+                  Icon(Icons.star),
+                  Icon(Icons.star),
+                ],
+              ),
+              Text("Muito bom"),
+              const SizedBox(height: 20),
+            ],
+          ),
+        ),
+        const SizedBox(height: 30),
+        Container(
+          width: double.infinity,
+          color: const Color.fromARGB(255, 211, 211, 211),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  Icon(Icons.kitchen),
+                  Row(children: [Text("Prep")]),
+                  Row(children: [Text("25m")]),
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(Icons.kitchen),
+                  Row(children: [Text("Prep")]),
+                  Row(children: [Text("25m")]),
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(Icons.kitchen),
+                  Row(children: [Text("Prep")]),
+                  Row(children: [Text("25m")]),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
