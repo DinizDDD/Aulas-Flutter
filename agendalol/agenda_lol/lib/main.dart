@@ -128,19 +128,19 @@ class HomeAgenda extends StatelessWidget {
                     Column(
                       children: [
                         Image.network(
-                          "https://i1.sndcdn.com/artworks-Xxh0k62TbIXZeao6-ixzzxw-t240x240.jpg",
-                          width: 70,
+                          "https://wiki.leagueoflegends.com/en-us/images/thumb/Thornbound_Atakhan_Render.png/800px-Thornbound_Atakhan_Render.png?76bb1",
+                          width: 120,
                         ),
-                        Text("Vastilarvas"),
+                        Text("Atakhan"),
                       ],
                     ),
                     Column(
                       children: [
                         Image.network(
-                          "https://i1.sndcdn.com/artworks-Xxh0k62TbIXZeao6-ixzzxw-t240x240.jpg",
-                          width: 70,
+                          "https://wiki.leagueoflegends.com/en-us/images/thumb/Elder_Dragon_Render.png/800px-Elder_Dragon_Render.png?3fe9c",
+                          width: 145,
                         ),
-                        Text("Vastilarvas"),
+                        Text("Dragão Anciãoz'"),
                       ],
                     ),
                   ],
