@@ -7,7 +7,98 @@ class Myhomepage extends StatefulWidget {
   State<Myhomepage> createState() => _MyHomePageState();
 }
 
+
 class _MyHomePageState extends State<Myhomepage> {
+
+
+  //Criando um modal
+
+  void _showForm(BuildContext context) {
+    final TextEditingController imageController = TextEditingController();
+    final TextEditingController descricaoController = TextEditingController(); 
+
+    showDialog(
+      context: context,
+       builder: (BuildContext context){
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Cadastrar Tarefa",
+                    style: TextStyle(
+                      fontFamily: "Verdana",
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold 
+                    ),
+                    ),
+                    IconButton(
+                      onPressed: (){
+                        Navigator.of(context) .pop();
+                      },
+                      icon: Icon(Icons.close),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                TextField(
+                  controller: imageController,
+                  decoration: InputDecoration(
+                    labelText: 'URL da Imagem'
+                  ),
+                ),
+                SizedBox(height: 15),
+                TextField(
+                  controller: descricaoController,
+                  decoration: InputDecoration(
+                    labelText: 'Descrição da tarefa'
+                  ),
+                ),
+                SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){
+                    
+                      },
+                       child: Text("Cadastrar",
+                       style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueGrey
+                       ),
+                       ),
+                    ),
+                    ElevatedButton(
+                      onPressed: (){
+
+                      },
+                      child: Text("Cancelar",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueGrey
+                       ),))
+                  ],
+                ),
+              ],
+            )
+          )
+          ), 
+          );
+        },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +114,12 @@ class _MyHomePageState extends State<Myhomepage> {
           Tarefas("data:image/jpeg;base64,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", "Fazer o Baron")
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          _showForm(context);
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
@@ -32,6 +129,94 @@ class _MyHomePageState extends State<Myhomepage> {
 class Tarefas extends StatelessWidget {
   final String imagem_url;
   final String desc_tarefa;
+
+    void _showEdit(BuildContext context) {
+      final TextEditingController imageEdit = TextEditingController();
+      final TextEditingController descricaoEdit = TextEditingController(); 
+
+
+    showDialog(
+      context: context,
+       builder: (BuildContext context){
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusGeometry.circular(10),
+          ),
+                    child: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Editar Tarefa",
+                    style: TextStyle(
+                      fontFamily: "Verdana",
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold 
+                    ),
+                    ),
+                    IconButton(
+                      onPressed: (){
+                        Navigator.of(context) .pop();
+                      },
+                      icon: Icon(Icons.close),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                TextField(
+                  controller: imageEdit,
+                  decoration: InputDecoration(
+                    labelText: 'URL da Imagem'
+                  ),
+                ),
+                SizedBox(height: 15),
+                TextField(
+                  controller: descricaoEdit,
+                  decoration: InputDecoration(
+                    labelText: 'Descrição da tarefa'
+                  ),
+                ),
+                SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){
+                    
+                      },
+                       child: Text("Editar",
+                       style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueGrey
+                       ),
+                       ),
+                    ),
+                    ElevatedButton(
+                      onPressed: (){
+
+                      },
+                      child: Text("Cancelar",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueGrey
+                       ),))
+                  ],
+                ),
+              ],
+            )
+          )
+          ), 
+        );
+       }
+       );
+  }
+  
 
   const Tarefas(this.imagem_url, this.desc_tarefa, {super.key});
 
@@ -68,7 +253,7 @@ class Tarefas extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     onPressed: () {
-                      print("Tarefa 1 Editada");
+                      _showEdit(context);
                     },
                     child: Icon(Icons.edit)),
                 )
