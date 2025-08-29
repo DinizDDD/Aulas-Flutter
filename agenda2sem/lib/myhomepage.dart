@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            color: Colors.amber,
+                            color: const Color.fromARGB(255, 0, 77, 139),
                           ),
                         ),
                       ),
@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            color: Colors.amber,
+                            color: const Color.fromARGB(255, 255, 0, 0),
                           ),
                         ),
                       ),
@@ -204,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            color: Colors.amber,
+                            color: const Color.fromARGB(255, 7, 156, 255),
                           ),
                         ),
                       ),
@@ -214,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           //ação do botão
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black38,
+                          backgroundColor: const Color.fromARGB(96, 255, 0, 0),
                         ),
                       ),
                     ],
@@ -233,7 +233,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Tarefas"),
-        backgroundColor: Colors.amber,
+        backgroundColor: const Color.fromARGB(255, 85, 111, 255),
       ),
       body: ListView.builder(
         itemCount: _tarefas.length,
@@ -270,7 +270,7 @@ class Tarefas extends StatelessWidget {
       padding: const EdgeInsets.all(5.0),
       child: Stack(
         children: [
-          Container(color: Color.fromARGB(255, 115, 211, 214), height: 140),
+          Container(color: Color.fromARGB(255, 178, 180, 255), height: 140),
           Container(
             color: Colors.white,
             height: 100,
@@ -282,7 +282,7 @@ class Tarefas extends StatelessWidget {
                   child: Container(
                     width: 100,
                     height: 100,
-                    color: Colors.blue,
+                    color: const Color.fromARGB(255, 255, 255, 255),
                     child: Image.network(imagem_url),
                   ),
                 ),
