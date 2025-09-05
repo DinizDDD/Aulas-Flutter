@@ -18,6 +18,48 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
  
+  //metodo editar Tarefas
+  void _editarTarefas(int index, String url, String descricao) {
+    setState(() {
+      _tarefas[index] = {'url': url, 'descricao': descricao};
+    });
+  }
+ 
+  //METODO DELETE
+  void _deletarTarefas(int index) {
+    setState(() {
+      _tarefas.removeAt(index);
+    });
+  }
+  //MODAL PARA CONFIRMAR
+ 
+  void _confirmarExclusao(BuildContext context, int index) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Confirmar Exclusão"),
+          content: Text("Tem certeza que deseja excluir?"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text("Cancelar"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                () => _deletarTarefas(index);
+                Navigator.of(context).pop();
+              },
+              child: Text("Excluir"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+ 
   //Criando um modal
   //metodo void modal cadastrar
   void _showForm(BuildContext context) {
@@ -103,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            color: const Color.fromARGB(255, 0, 77, 139),
+                            color: Colors.amber,
                           ),
                         ),
                       ),
@@ -119,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            color: const Color.fromARGB(255, 255, 0, 0),
+                            color: Colors.amber,
                           ),
                         ),
                       ),
@@ -137,10 +179,14 @@ class _MyHomePageState extends State<MyHomePage> {
   //Criando Modal de Editar
   //Criando um modal
   //metodo void Editar
-  void _showFormEdit(BuildContext context) {
+  void _showFormEdit(BuildContext context, int index) {
     //criando as variaveis de controller
-    final TextEditingController imageController = TextEditingController();
-    final TextEditingController descricaoController = TextEditingController();
+    final TextEditingController imageController = TextEditingController(
+      text: _tarefas[index]['url'],
+    );
+    final TextEditingController descricaoController = TextEditingController(
+      text: _tarefas[index]['descricao'],
+    );
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -198,13 +244,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       ElevatedButton(
                         onPressed: () {
                           //ação do botão salvar
+                          _editarTarefas(
+                            index,
+                            imageController.text,
+                            descricaoController.text,
+                          );
+                          Navigator.of(context).pop();
                         },
                         child: Text(
                           'Editar',
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            color: const Color.fromARGB(255, 7, 156, 255),
+                            color: Colors.amber,
                           ),
                         ),
                       ),
@@ -214,7 +266,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           //ação do botão
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(96, 255, 0, 0),
+                          backgroundColor: Colors.black38,
                         ),
                       ),
                     ],
@@ -233,7 +285,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Tarefas"),
-        backgroundColor: const Color.fromARGB(255, 85, 111, 255),
+        backgroundColor: Colors.amber,
       ),
       body: ListView.builder(
         itemCount: _tarefas.length,
@@ -241,7 +293,8 @@ class _MyHomePageState extends State<MyHomePage> {
           return Tarefas(
             _tarefas[index]['url']!,
             _tarefas[index]['descricao']!,
-            () => _showFormEdit(context),
+            () => _showFormEdit(context, index),
+            () => _confirmarExclusao(context, index),
           );
         },
       ),
@@ -261,8 +314,15 @@ class Tarefas extends StatelessWidget {
   final String imagem_url;
   final String descricao;
   final VoidCallback onEdit;
+  final VoidCallback onDelete;
  
-  const Tarefas(this.imagem_url, this.descricao, this.onEdit, {super.key});
+  const Tarefas(
+    this.imagem_url,
+    this.descricao,
+    this.onEdit,
+    this.onDelete, {
+    super.key,
+  });
  
   @override
   Widget build(BuildContext context) {
@@ -270,7 +330,7 @@ class Tarefas extends StatelessWidget {
       padding: const EdgeInsets.all(5.0),
       child: Stack(
         children: [
-          Container(color: Color.fromARGB(255, 178, 180, 255), height: 140),
+          Container(color: Color.fromARGB(255, 115, 211, 214), height: 140),
           Container(
             color: Colors.white,
             height: 100,
@@ -282,7 +342,7 @@ class Tarefas extends StatelessWidget {
                   child: Container(
                     width: 100,
                     height: 100,
-                    color: const Color.fromARGB(255, 255, 255, 255),
+                    color: Colors.blue,
                     child: Image.network(imagem_url),
                   ),
                 ),
@@ -296,6 +356,7 @@ class Tarefas extends StatelessWidget {
                     child: Icon(Icons.edit),
                   ),
                 ),
+                ElevatedButton(onPressed: onDelete, child: Icon(Icons.delete)),
               ],
             ),
           ),
