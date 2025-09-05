@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                () => _deletarTarefas(index);
+                _deletarTarefas(index);
                 Navigator.of(context).pop();
               },
               child: Text("Excluir"),
