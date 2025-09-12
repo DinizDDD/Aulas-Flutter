@@ -47,33 +47,51 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _confirmarExclusaoPet(BuildContext context, int index) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text("Confirmar Exclusão"),
-          content: const Text("Tem certeza que deseja excluir este pet?"),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text("Cancelar"),
+void _confirmarExclusaoPet(BuildContext context, int index) {
+  final petNome = _pets[index]['nome']; 
+
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text(
+          "Confirmar Exclusão",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        content: Text(
+          "Deseja realmente excluir o pet \"$petNome\"?",
+          style: const TextStyle(fontSize: 16),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(); 
+            },
+            child: const Text(
+              "Cancelar",
+              style: TextStyle(color: Colors.grey),
             ),
-            ElevatedButton(
-              onPressed: () {
-                _deletarPet(index);
-                Navigator.of(context).pop();
-              },
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent),
-              child: const Text("Excluir"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              _deletarPet(index); 
+              Navigator.of(context).pop();
+
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.redAccent,
             ),
-          ],
-        );
-      },
-    );
-  }
+            child: const Text(
+              "Excluir",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ],
+      );
+    },
+  );
+}
+
 
   void _showFormPet(BuildContext context) {
     final TextEditingController nomeController = TextEditingController();
