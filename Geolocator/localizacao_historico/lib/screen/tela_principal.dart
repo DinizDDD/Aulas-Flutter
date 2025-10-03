@@ -10,6 +10,8 @@ class TelaPrincipal extends StatefulWidget {
 }
 
 class _TelaPrincipalState extends State<TelaPrincipal> {
+  List<Map<String, dynamic>> _localizacoes = [];
+  
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
