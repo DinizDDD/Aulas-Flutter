@@ -1,3 +1,4 @@
+import 'package:ecotrack/screens/subscribe_screen.dart';
 import 'package:ecotrack/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
@@ -110,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                   return null;
                 },
-                
+
               ),
               const SizedBox(height: 16),
               TextFormField(
@@ -168,15 +169,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 child: Text(
                   "Entrar",
-                  style: TextStyle(fontFamily: "Arial", fontSize: 16),
+                  style: TextStyle(fontFamily: "Arial", fontSize: 20),
                 ),
               ),
               SizedBox(height: 16),
               SizedBox(
-                height: 50,
+                height: 25,
                 width: 150,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CadastroScreen()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     foregroundColor: Colors.white,
