@@ -1,3 +1,4 @@
+import 'package:ecotrack/screens/subscribe_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
 
@@ -17,7 +18,7 @@ class EcoTrackApp extends StatelessWidget {
         primarySwatch: Colors.green,
         useMaterial3: true,
       ),
-      home: const LoginScreen(),
+      home: const CadastroScreen(),
     );
   }
 }
