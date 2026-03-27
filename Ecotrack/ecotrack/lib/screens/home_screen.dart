@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login_screen.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,12 +9,43 @@ class HomePage extends StatelessWidget {
     return Scaffold(
 
       /// NAVBAR
-      appBar: AppBar(
-        title: Image.asset('logo.png',
-        height: 70,),
-        backgroundColor: Colors.green,
-        centerTitle: false,
+appBar: AppBar(
+  backgroundColor: Colors.green,
+  centerTitle: false,
+
+  title: Row(
+    children: [
+      Image.asset(
+        'logo.png',
+        height: 50,
       ),
+      const SizedBox(width: 10),
+      const Text("EcoTrack"),
+    ],
+  ),
+
+  actions: [
+    IconButton(
+      icon: const Icon(Icons.account_box),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LoginScreen(),
+          ),
+        );
+      },
+    ),
+    IconButton(
+      icon: const Icon(Icons.notifications),
+      onPressed: () {},
+    ),
+    IconButton(
+      icon: const Icon(Icons.door_back_door),
+      onPressed: () {},
+    ),
+  ],
+),
 
       /// CORPO
       body: Column(
