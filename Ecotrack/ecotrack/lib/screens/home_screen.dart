@@ -63,7 +63,7 @@ appBar: AppBar(
 
                     /// BEM-VINDO
                     const Text(
-                      "Bem-vindo ao EcoTrack 🌱",
+                      "Olá, (nome do usuário)",
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -73,21 +73,98 @@ appBar: AppBar(
                     const SizedBox(height: 10),
 
                     const Text(
-                      "Acompanhe sua sustentabilidade e contribua para um mundo melhor.",
-                      style: TextStyle(fontSize: 16),
+                      "Bem vindo ao Ecotrack.",
+                      style: TextStyle(fontSize: 20),
                     ),
 
                     const SizedBox(height: 20),
 
-                    /// CARDS
+                    /// CARDS     
+
+                    Text("Resumo",
+                    style: TextStyle(fontSize: 18),),
+
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        _card("Salas", Icons.meeting_room),
-                        _card("Ranking", Icons.leaderboard),
-                        _card("Ações", Icons.eco),
+                        Expanded(
+                          child: Card(
+                            elevation: 2, // Intensidade da sombra
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10), // Cantos arredondados
+                            ),
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: Icon(Icons.album),
+                                  title: Text('Título do Card'),
+                                  subtitle: Text('Subtítulo do conteúdo'),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                         Expanded(
+                          child: Card(
+                            elevation: 2, // Intensidade da sombra
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10), // Cantos arredondados
+                            ),
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: Icon(Icons.album),
+                                  title: Text('Título do Card'),
+                                  subtitle: Text('Subtítulo do conteúdo'),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ],
                     ),
+
+                     Row(
+                      children: [
+                        Expanded(
+                          child: Card(
+                            elevation: 2, // Intensidade da sombra
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10), // Cantos arredondados
+                            ),
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: Icon(Icons.album),
+                                  title: Text('Título do Card'),
+                                  subtitle: Text('Subtítulo do conteúdo'),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                        child: Card(
+                          elevation: 2, // Intensidade da sombra
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10), // Cantos arredondados
+                          ),
+                          child: Column(
+                            children: [
+                              ListTile(
+                                leading: Icon(Icons.album),
+                                title: Text('Título do Card'),
+                                subtitle: Text('Subtítulo do conteúdo'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
 
                     const SizedBox(height: 30),
 
