@@ -46,6 +46,11 @@ class AuthService {
   }
 
   Future<String?> login({
-
-  });
+    required String email,
+    required String senha,
+  }) async {
+    //validação se usuario existe na base de dados
+    //senha está correta
+    //email e senha incorretos
+  }
 }
